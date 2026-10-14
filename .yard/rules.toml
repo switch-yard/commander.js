@@ -1,0 +1,30 @@
+network = "registries"
+
+[[rule]]
+name = "secrets never merge"
+match = { added = "AKIA[0-9A-Z]{16}|-----BEGIN ((RSA|EC|DSA|OPENSSH|PGP) )?PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{36}|sk_live_[0-9A-Za-z]{24}|xox[baprs]-[0-9A-Za-z-]{10,}" }
+policy = "block"
+
+[[rule]]
+name = "agent instructions wait for a person"
+match = { path = "(^|/)(AGENTS|CLAUDE)\\.md$|^\\.mcp\\.json$|^\\.(agents|claude|cursor|codex)/" }
+policy = "human-review"
+
+[[rule]]
+name = "ci workflows wait for a person"
+match = { path = "^\\.github/" }
+policy = "human-review"
+
+[[rule]]
+name = "docs merge on their own"
+match = { path = "(^|/)(docs?|documentation)/|\\.(md|mdx|rst|adoc)$" }
+policy = "auto-merge"
+
+[[rule]]
+name = "tests merge once the checks pass"
+match = { path = "(^|/)(tests?|__tests__|spec)/|\\.(test|spec)\\.[cm]?[jt]sx?$" }
+policy = "auto-merge"
+
+[[check]]
+name = "Test on node 26.x and ubuntu-latest"
+command = "npm ci && npm test && npm run check"
