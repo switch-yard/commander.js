@@ -11,7 +11,8 @@
     "argument",
     "args",
     "argv",
-    "suggestions"
+    "suggestions",
+    "typos"
   ],
   "author": "TJ Holowaychuk <tj@vision-media.ca>",
   "license": "MIT",

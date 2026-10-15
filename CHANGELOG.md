@@ -14,6 +14,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - unit tests for `suggestSimilar`, and its similarity threshold as a named constant
 
+### Changed
+
+- `editDistance` returns early when the typed word is exactly a candidate
+
 ## [15.0.0] (2026-05-29)
 
 Commander 15 is ESM only. This is expected to be seamless for ESM consumers, but some CommonJS consumers may hit issues with tooling requiring configuration for ESM-only dependencies. See Migration Tips below.
