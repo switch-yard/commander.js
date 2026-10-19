@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+- unit tests for `suggestSimilar` noted in run 20261019-062044
 - unit tests for `suggestSimilar` noted in run 20261016-220059
 - `editDistance` speed-up noted in run 20261016-220059
 ### Added
