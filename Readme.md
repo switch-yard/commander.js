@@ -1169,4 +1169,16 @@ The main forum for free and community support is the project [Issues](https://gi
 
 Available as part of the Tidelift Subscription
 
-The maintainers of Commander and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-commander?utm_source=npm-commander&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
+The maintainers of Commander and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-commander?utm_source=npm-commander&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n
+## Questions people ask
+
+### Which wins when an option is set on the command line and in the environment?
+
+The command line. An option bound to an environment variable with `.env()` takes the variable's value only
+when the option was not given on the command line, so a person can always override a container's settings
+for one run.
+
+### How do I show help after an error?
+
+Call `.showHelpAfterError()` on the program, or pass your own hint, such as
+`.showHelpAfterError('(run with --help for every option)')`.
