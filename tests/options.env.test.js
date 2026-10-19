@@ -33,13 +33,13 @@ describe('Option.env()', () => {
           delete process.env.BAR;
         });
 
-        test('when env defined and value source is config then option from env', () => {
+        test('when env defined and value source is config then option from config', () => {
           const program = new commander.Command();
           process.env.BAR = 'env';
           program.addOption(new commander.Option(fooFlags).env('BAR'));
           program.setOptionValueWithSource('foo', 'config', 'config');
           program.parse([], { from: 'user' });
-          assert.equal(program.opts().foo, 'env');
+          assert.equal(program.opts().foo, 'config');
           delete process.env.BAR;
         });
 
