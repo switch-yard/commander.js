@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "switchyard": {
+      "type": "http",
+      "url": "https://app.switchyard.so/v1/projects/commander-js/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SWITCHYARD_TOKEN}"
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ permissions:
 jobs:
   test:
     name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ startsWith(github.ref, 'refs/heads/switchyard/test/') && startsWith((matrix.os), 'ubuntu') && !endsWith((matrix.os), '-arm') && !endsWith((matrix.os), '-arm64') && 'switchyard' || (matrix.os) }}
     strategy:
       fail-fast: false
       matrix:
